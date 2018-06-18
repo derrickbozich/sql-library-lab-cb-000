@@ -35,9 +35,8 @@ def select_series_title_with_most_human_characters
   FROM series
   JOIN characters
   ON series.id = characters.series_id
-  COUNT(characters.species = 'human') AS count
+  WHERE characters.species = 'human'
   GROUP BY series.title
-  ORDER BY count
   LIMIT 1;"
 end
 
